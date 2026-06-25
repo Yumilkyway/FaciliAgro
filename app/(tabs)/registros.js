@@ -40,10 +40,10 @@ export default function RegistrosScreen() {
       </View>
 
       <View style={styles.linhaTitulos}>
-        <Text style={[styles.tituloColuna, { width: 50 }]}>Código</Text>
+        <Text style={[styles.tituloColuna, { width: 90 }]}>Código</Text>
         <Text style={[styles.tituloColuna, { width: 55 }]}>Sexo</Text>
         <Text style={[styles.tituloColuna, { width: 75 }]}>Nascim.</Text>
-        <Text style={[styles.tituloColuna, { width: 60 }]}>Idade</Text>
+        <Text style={[styles.tituloColuna, { width: 85 }]}>Idade</Text>
         <Text style={[styles.tituloColuna, { width: 65 }]}>Vacina</Text>
       </View>
 
