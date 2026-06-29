@@ -1,16 +1,5 @@
-﻿import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  Pressable,
-  StyleSheet,
-  ActivityIndicator,
-  Alert,
-  KeyboardAvoidingView,
-  Platform,
-  ScrollView,
-} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TextInput, Image, Pressable, StyleSheet, ActivityIndicator, Alert, KeyboardAvoidingView, Platform, ScrollView, } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useAuth } from '../src/context/AuthContext';
 
@@ -45,11 +34,12 @@ export default function LoginScreen() {
       style={styles.tela}
     >
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
-        {/* Logo círculo */}
+        {/* Logo */}
         <View style={styles.logoContainer}>
-          <View style={styles.logoCirculo}>
-            <Text style={styles.logoTexto}>Logo</Text>
-          </View>
+          <Image 
+            source={require('../assets/imagens/Faciliagro-logo.png')} 
+            style={{ width: 260, height: 260, resizeMode: 'contain' }} 
+          />
         </View>
 
         {/* Formulário */}
@@ -104,7 +94,7 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     alignItems: 'center',
-    marginBottom: 48,
+    marginBottom: 20,
   },
   logoCirculo: {
     width: 160,
