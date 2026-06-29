@@ -1,6 +1,3 @@
-// src/services/sync.js
-// a função `enviarParaBackend` é um STUB. tem que substituir pela chamada real à API (ex: fetch para sua API REST/Firebase/Supabase)
-
 import NetInfo from '@react-native-community/netinfo';
 import { getFilaSync, limparFilaSync } from './storage';
 

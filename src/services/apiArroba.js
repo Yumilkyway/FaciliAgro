@@ -1,16 +1,9 @@
-// src/services/apiArroba.js
-
-/**
- * Consulta a API pública do Ipeadata para obter a última cotação da arroba do Boi Gordo (CEPEA/B3).
- * Utiliza o protocolo OData v4.
- */
 export async function obterPrecoArroba() {
   try {
     const url = "https://www.ipeadata.gov.br/api/odata4/ValoresSerie(SERCODIGO='PRECOS12_BOIGORDO12')?$top=1&$orderby=VALDATA desc";
     
-    // Configura um timeout curto para evitar travar a inicialização do app caso a rede esteja ruim
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 6000); // 6 segundos de timeout
+    const timeoutId = setTimeout(() => controller.abort(), 6000); 
 
     const response = await fetch(url, { signal: controller.signal });
     clearTimeout(timeoutId);
@@ -24,7 +17,7 @@ export async function obterPrecoArroba() {
       const registro = data.value[0];
       return {
         precoArroba: parseFloat(registro.VALVALOR),
-        dataPrecoArroba: registro.VALDATA, // Formato retornado pela API (ISO com fuso ou apenas YYYY-MM-DD)
+        dataPrecoArroba: registro.VALDATA,
         fonte: 'Cepea/B3 via Ipeadata',
       };
     }

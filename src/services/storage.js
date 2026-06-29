@@ -1,4 +1,3 @@
-// src/services/storage.js
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function getKeys(userId) {
