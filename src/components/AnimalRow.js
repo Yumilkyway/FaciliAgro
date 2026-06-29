@@ -1,4 +1,3 @@
-// src/components/AnimalRow.js
 import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
 import { Linking, Pressable, StyleSheet, Text, View } from 'react-native';
@@ -15,10 +14,10 @@ export default function AnimalRow({ animal, onEditar, onExcluir }) {
 
   const corVacina = vacina === 'Em dia' ? '#2e7d32' : '#c62828';
   
-  // Arroba calculation
+  // Cálculo da arroba estimada com base no peso do animal, assumindo que 1 arroba = 30 kg
   const arrobaEstimada = animal.peso ? (animal.peso / 30).toFixed(1) : '-';
 
-  // Define status styling and indicators
+  // Determina se o animal está vendido ou falecido para exibir o status apropriado
   const isVendido = !!animal.vendido;
   const isFalecido = !!animal.falecido;
   

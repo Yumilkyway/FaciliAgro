@@ -1,4 +1,3 @@
-// src/context/AnimalsContext.js
 import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
 import {
   getAnimais,
@@ -109,7 +108,7 @@ export function AnimalsProvider({ children }) {
     const eventos = animal.eventos ? [...animal.eventos, novoEvento] : [novoEvento];
     const dadosAtualizados = { eventos };
 
-    // Se o evento impactar o estado atual do animal, atualiza os campos rápidos:
+    // Se o evento impactar o estado atual do animal, atualiza os campos:
     if (evento.tipo === 'Pesagem') {
       dadosAtualizados.peso = parseFloat(evento.peso);
     } else if (evento.tipo === 'Vacina') {

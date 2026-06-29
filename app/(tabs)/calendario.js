@@ -1,6 +1,6 @@
-// app/(tabs)/calendario.js
-import React, { useMemo } from 'react';
+﻿import React, { useMemo } from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAnimals } from '../../src/context/AnimalsContext';
 import { Ionicons } from '@expo/vector-icons';
 import { formatarDataBR } from '../../src/utils/dateUtils';
@@ -51,7 +51,7 @@ export default function CalendarioScreen() {
   }
 
   return (
-    <View style={styles.tela}>
+    <SafeAreaView style={styles.tela}>
       <View style={styles.header}>
         <Text style={styles.tituloHeader}>Cronograma do Rebanho</Text>
         <Text style={styles.headerTexto}>{online ? 'Modo online' : 'Modo offline'}</Text>
@@ -76,7 +76,6 @@ export default function CalendarioScreen() {
               const corEvento = getCorEvento(item.tipo);
               return (
                 <View style={styles.linhaTimeline}>
-                  {/* Linha vertical decorativa */}
                   <View style={styles.linhaEsquerdaContainer}>
                     <View style={[styles.circuloLinha, { backgroundColor: corEvento }]}>
                       <Ionicons name={getIconeEvento(item.tipo)} size={14} color="#fff" />
@@ -130,7 +129,7 @@ export default function CalendarioScreen() {
           />
         )}
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -184,7 +183,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#cbd4cb',
     marginTop: 4,
-    marginBottom: -16, // sobrepõe com a margem do item para ligar os círculos
+    marginBottom: -16, 
   },
   cardEvento: {
     flex: 1,

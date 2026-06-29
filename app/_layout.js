@@ -1,5 +1,4 @@
-// app/_layout.js
-import React, { useEffect } from 'react';
+﻿import React, { useEffect } from 'react';
 import { Stack, useRouter, useSegments } from 'expo-router';
 import { AuthProvider, useAuth } from '../src/context/AuthContext';
 import { AnimalsProvider } from '../src/context/AnimalsContext';

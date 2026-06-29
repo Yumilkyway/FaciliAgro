@@ -1,5 +1,5 @@
-// app/(tabs)/menu.js
 import { Ionicons } from '@expo/vector-icons';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import {
@@ -117,7 +117,7 @@ export default function MenuScreen() {
   }
 
   return (
-    <View style={styles.tela}>
+    <SafeAreaView style={styles.tela}>
       {/* Header com nome do usuário e botão sair */}
       <View style={styles.header}>
         <View style={styles.linhaHeaderSuperior}>
@@ -275,7 +275,7 @@ export default function MenuScreen() {
           </View>
         </View>
       </Modal>
-    </View>
+    </SafeAreaView>
   );
 }
 

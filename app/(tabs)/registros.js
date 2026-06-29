@@ -1,6 +1,6 @@
-// app/(tabs)/registros.js
-import React from 'react';
+﻿import React from 'react';
 import { View, Text, FlatList, Pressable, StyleSheet, Alert } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useAnimals } from '../../src/context/AnimalsContext';
@@ -26,7 +26,7 @@ export default function RegistrosScreen() {
   }
 
   return (
-    <View style={styles.tela}>
+    <SafeAreaView style={styles.tela}>
       <View style={styles.header}>
         <Text style={styles.headerTexto}>{online ? 'Modo online' : 'Modo offline'}</Text>
       </View>
@@ -60,7 +60,7 @@ export default function RegistrosScreen() {
           )}
         />
       )}
-    </View>
+    </SafeAreaView>
   );
 }
 

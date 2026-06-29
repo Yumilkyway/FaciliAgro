@@ -1,4 +1,3 @@
-// src/utils/dateUtils.js
 // Funções auxiliares para cálculo de idade, categoria e status de vacina
 
 /**

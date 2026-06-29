@@ -1,5 +1,4 @@
-// app/registro-animal.js
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -174,7 +173,7 @@ export default function RegistroAnimalScreen() {
       const pesoVal = parseFloat(pesoEvento.replace(',', '.'));
       novoEvento.peso = pesoVal;
       novoEvento.arrobaEstimada = parseFloat((pesoVal / 30).toFixed(2));
-      // Atualiza o peso rápido do formulário principal
+      // Atualiza o peso do formulário principal
       setPeso(String(pesoVal));
     } else if (tipoEvento === 'Vacina') {
       if (!vacinaEvento.trim()) {
@@ -270,7 +269,7 @@ export default function RegistroAnimalScreen() {
           <TextInput style={styles.input} placeholder="Ex: Angus, Nelore, etc" value={raca} onChangeText={setRaca} />
         </Campo>
 
-        <Campo label={`Peso atual (kg) — ${arrobaEstimada} @ estimada`}>
+        <Campo label={`Peso atual (kg) ${arrobaEstimada} @ estimada`}>
           <TextInput
             style={styles.input}
             placeholder="Ex: 320"
@@ -300,7 +299,7 @@ export default function RegistroAnimalScreen() {
           />
         </Campo>
 
-        {/* Falecimento e Venda Switches */}
+        {/* Falecimento e Venda */}
         <View style={styles.secaoSwitches}>
           <View style={styles.linhaSwitch}>
             <Text style={styles.labelCampo}>Registrar falecimento</Text>
@@ -337,7 +336,7 @@ export default function RegistroAnimalScreen() {
         </View>
 
         <Pressable style={styles.botaoGTA} onPress={() => Linking.openURL(LINK_GTA)}>
-          <Text style={styles.botaoGTATexto}>Emitir GTA no site do governo ↗</Text>
+          <Text style={styles.botaoGTATexto}>Emitir GTA no site do governo</Text>
         </Pressable>
 
         <Pressable style={styles.botaoSalvar} onPress={salvar}>
@@ -348,7 +347,7 @@ export default function RegistroAnimalScreen() {
           <Text style={styles.botaoCancelarTexto}>Cancelar / Voltar</Text>
         </Pressable>
 
-        {/* SEÇÃO DO HISTÓRICO DE EVENTOS - Visível apenas para animais cadastrados */}
+        {/* Histórico - Visível apenas para animais cadastrados */}
         {animalExistente && (
           <View style={styles.secaoHistorico}>
             <View style={styles.headerHistorico}>
@@ -610,7 +609,7 @@ const styles = StyleSheet.create({
   botaoCancelar: { alignItems: 'center', paddingVertical: 10, marginBottom: 24 },
   botaoCancelarTexto: { color: '#888' },
 
-  // Histórico de Eventos
+  // Histórico de eventos
   secaoHistorico: {
     marginTop: 20,
     borderTopWidth: 2,

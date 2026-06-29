@@ -1,5 +1,4 @@
-// app/cadastro.js
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
   View,
   Text,
